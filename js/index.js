@@ -1,6 +1,6 @@
 // Your code goes here
 const aTags = document.querySelectorAll('.nav a');
-const logo = document.querySelector('header.logo-heading');
+const logo = document.querySelector('header .logo-heading');
 const funPicture = document.querySelectorAll('.img-content');
 const signUp = document.querySelectorAll('.btn');
 const welcome = document.querySelector('.intro h2');
@@ -35,7 +35,11 @@ signUp.forEach(signUp =>{
 
  
 logo.addEventListener('dblclick', function(event){
-    event.target.style.backgroundColor = 'green';
-});
+    logo.style.fontSize = '1rem';
+
+    setTimeout(function(){
+        logo.style.fontSize = '4rem';
+    }, 500);
+}, false);
 
 
