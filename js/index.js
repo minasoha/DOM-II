@@ -27,23 +27,15 @@ funPicture.forEach(funPicture => {
     }, false);
 });
 
-document.addEventListener('keydown', logKey);
-
-function logKey(e) {
-    logo.textContent += ` ${e.code}`;
-  };
-
 signUp.forEach(signUp =>{
     signUp.addEventListener('mouseleave', event =>{
-       event.target.style.color = 'purple';
-        event.target.style.color = '';
+       event.target.style.backgroundColor = 'purple';
   }, 1000);
  }, false);
 
- function confirm(event){
-    welcome.classList.remove('.intro');
-    logo.classList.add('.logo-heading')
+ 
+logo.addEventListener('dblclick', function(event){
+    event.target.style.backgroundColor = 'green';
+});
 
- }
 
- welcome.addEventListener('mouseenter', confirm);
