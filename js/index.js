@@ -7,6 +7,7 @@ const welcome = document.querySelector('.intro h2');
 
 
 
+
 aTags.forEach(aTags =>{
     aTags.addEventListener('mouseenter', function(event){
         event.target.style.color = 'green';
@@ -42,4 +43,12 @@ logo.addEventListener('dblclick', function(event){
     }, 500);
 }, false);
 
+document.addEventListener('keydown', logKey);
 
+function logKey(e) {
+    logo.textContent += ` ${e.code}`;
+
+    setTimeout(function(){
+        logo.textContent = 'Fun Bus';
+    }, 500);
+  }
