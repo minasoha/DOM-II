@@ -8,8 +8,7 @@ const welcome = document.querySelector('.intro h2');
 const copyRight = document.querySelector('.footer p');
 const partyPicture = document.querySelector('.content-destination')
 const message = document.querySelector('.content-destination h2')
-console.log(partyPicture)
-console.log(message)
+
 
 
 aTags.forEach(aTags =>{
@@ -19,22 +18,16 @@ aTags.forEach(aTags =>{
 });
 aTags.forEach(aTags =>{
     aTags.addEventListener('mouseenter', function(event){
-        
-
         event.target.style.color = 'green';
-    
         setTimeout(function(){
             event.target.style.color = '';
         },500);
-        
     }, false);
-    
 });
 
 funPicture.forEach(funPicture => {
     funPicture.addEventListener('click', function(event){
         event.target.style.borderRadius = '0';
-
         setTimeout(function(){
             event.target.style.borderRadius = '10px';
         }, 500);
@@ -48,9 +41,8 @@ signUp.forEach(signUp =>{
 });
 
  
-logo.addEventListener('dblclick', function(event){
+logo.addEventListener('dblclick', function(){
     logo.style.fontSize = '1rem';
-
     setTimeout(function(){
         logo.style.fontSize = '4rem';
     }, 500);
@@ -60,13 +52,12 @@ document.addEventListener('keydown', logKey);
 
 function logKey(e) {
     logo.textContent += ` ${e.code}`;
-
     setTimeout(function(){
         logo.textContent = 'Fun Bus';
     }, 500);
 }
 
-window.addEventListener('load', (event) => {
+window.addEventListener('load', () => {
     welcome.textContent = 'Welcome back!';
 });
 
@@ -83,7 +74,7 @@ document.addEventListener('wheel', function (event) {
     }
     scale = Math.min(Math.max(.125, scale), 4);
     copyRight.style.transform = `scale(${scale})`;
-    event.stopPropagation();
+    
     
 });
 
