@@ -4,6 +4,8 @@ const logo = document.querySelector('header .logo-heading');
 const funPicture = document.querySelectorAll('.img-content');
 const signUp = document.querySelectorAll('.btn');
 const welcome = document.querySelector('.intro h2');
+const copyRight = document.querySelector('.footer p');
+
 
 
 
@@ -31,8 +33,8 @@ funPicture.forEach(funPicture => {
 signUp.forEach(signUp =>{
     signUp.addEventListener('mouseleave', event =>{
        event.target.style.backgroundColor = 'purple';
-  }, 1000);
- }, false);
+  });
+ });
 
  
 logo.addEventListener('dblclick', function(event){
@@ -51,4 +53,24 @@ function logKey(e) {
     setTimeout(function(){
         logo.textContent = 'Fun Bus';
     }, 500);
-  }
+ }
+
+window.addEventListener('load', (event) => {
+    welcome.textContent = 'Welcome back!';
+});
+
+
+document.addEventListener('wheel', function (event) {
+    
+    let scale = 1;
+    if (event.deltaY < 0) {
+      
+      scale *= event.deltaY * -2;
+    }
+    else {
+      scale /= event.deltaY * 2;
+    }
+    scale = Math.min(Math.max(.125, scale), 4);
+    copyRight.style.transform = `scale(${scale})`;
+    
+  });
